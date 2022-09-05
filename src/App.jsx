@@ -27,7 +27,7 @@ const App = () => {
       <Box>
         <Navbar />
         <Stack direction="row" justifyContent="space-between" spacing={2}>
-          <Sidebar />
+          <Sidebar setThemeMode={setThemeMode} />
           <Feed />
           <Rightbar />
         </Stack>
