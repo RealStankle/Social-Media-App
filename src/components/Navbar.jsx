@@ -83,7 +83,7 @@ const Navbar = () => {
             </Badge>
           </IconButton>
           <IconButton sx={{ color: 'white' }}>
-            <Badge badgeContent={4} color="error">
+            <Badge badgeContent={7} color="error">
               <Notifications />
             </Badge>
           </IconButton>
