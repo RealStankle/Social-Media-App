@@ -23,15 +23,19 @@ const StyledToolbar = styled(Toolbar)({
 
 const SearchBar = styled(InputBase)(({ theme }) => ({
   backgroundColor: 'white',
+  color: 'black',
   paddingLeft: '10px',
   borderRadius: theme.shape.borderRadius,
   width: '40%',
-  boxShadow: theme.shadows[3],
+  boxShadow: theme.palette.mode === 'light' && theme.shadows[3],
   transition: theme.transitions.create(['box-shadow'], {
     duration: theme.transitions.duration.short,
   }),
   '&:focus-within': {
-    boxShadow: '0 0 0 3px black',
+    boxShadow:
+      theme.palette.mode === 'light'
+        ? '0 0 0 3px black'
+        : '0 0 0 3px hsl(198, 90%, 55%)',
   },
 }));
 
@@ -70,7 +74,7 @@ const Navbar = () => {
           placeholder="Search"
           endAdornment={
             <InputAdornment position="end">
-              <IconButton size="small">
+              <IconButton size="small" sx={{ color: 'grey.600' }}>
                 <Search />
               </IconButton>
             </InputAdornment>
