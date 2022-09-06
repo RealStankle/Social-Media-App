@@ -10,7 +10,13 @@ const Rightbar = () => {
         display: { xs: 'none', sm: 'block' },
       }}
     >
-      Rightbar
+      <Box
+        sx={{
+          position: 'fixed',
+        }}
+      >
+        Rightbar
+      </Box>
     </Box>
   );
 };
