@@ -25,14 +25,14 @@ const App = () => {
     <ThemeProvider theme={darkLightTheme}>
       <CssBaseline />
       <Box>
-        <Navbar />
+        <Navbar themeMode={themeMode} setThemeMode={setThemeMode} />
         <Stack
           direction="row"
           justifyContent="space-between"
           spacing={{ xs: 0, md: 2 }}
           p={{ xs: 1, md: 0 }}
         >
-          <Sidebar setThemeMode={setThemeMode} />
+          <Sidebar />
           <Feed />
           <Rightbar />
         </Stack>

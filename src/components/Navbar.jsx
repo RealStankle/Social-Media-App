@@ -13,8 +13,16 @@ import {
   styled,
   Toolbar,
   Typography,
+  Switch,
 } from '@mui/material';
-import { Public, Mail, Search, Notifications } from '@mui/icons-material';
+import {
+  Public,
+  Mail,
+  Search,
+  Notifications,
+  LightMode,
+  DarkMode,
+} from '@mui/icons-material';
 
 const StyledToolbar = styled(Toolbar)({
   display: 'flex',
@@ -59,7 +67,50 @@ const UserBox = styled(ButtonBase)(({ theme }) => ({
   padding: theme.spacing(1),
 }));
 
-const Navbar = () => {
+const DarkModeSwitch = styled(Switch)(({ theme }) => ({
+  width: 56,
+  height: 28,
+  padding: 0,
+  overflow: 'visible',
+  '& .MuiSwitch-switchBase': {
+    margin: 1,
+    padding: 0,
+    transform: 'translate(12%, 5%)',
+    '&.Mui-checked': {
+      transform: 'translate(114%, 5%)',
+      color: '#fff',
+      '& + .MuiSwitch-track': {
+        opacity: 1,
+        backgroundColor:
+          theme.palette.mode === 'dark'
+            ? 'hsl(198, 90%, 15%)'
+            : 'hsl(48, 90%, 85%)',
+        borderRadius: 20,
+      },
+    },
+  },
+  '& .MuiSvgIcon-root': {
+    backgroundColor:
+      theme.palette.mode === 'dark'
+        ? 'hsl(198, 90%, 55%)'
+        : 'hsl(48, 90%, 55%)',
+    width: 24,
+    height: 24,
+    borderRadius: '50%',
+    padding: 5,
+  },
+  '& .MuiSwitch-track': {
+    height: 28,
+    opacity: 1,
+    backgroundColor:
+      theme.palette.mode === 'dark'
+        ? 'hsl(198, 90%, 15%)'
+        : 'hsl(48, 90%, 85%)',
+    borderRadius: 20,
+  },
+}));
+
+const Navbar = ({ themeMode, setThemeMode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [anchorElement, setAnchorElement] = useState(null);
 
@@ -81,6 +132,13 @@ const Navbar = () => {
           }
         />
         <Icons>
+          <DarkModeSwitch
+            size="medium"
+            icon={<LightMode />}
+            checkedIcon={<DarkMode />}
+            checked={themeMode === 'dark'}
+            onChange={(e) => setThemeMode(e.target.checked ? 'dark' : 'light')}
+          />
           <IconButton sx={{ color: 'white' }}>
             <Badge badgeContent={4} color="error">
               <Mail />
@@ -135,6 +193,15 @@ const Navbar = () => {
         <MenuItem>Profile</MenuItem>
         <MenuItem>My Account</MenuItem>
         <MenuItem>Logout</MenuItem>
+        <Box sx={{ p: 1, display: { xs: 'block', md: 'none' } }}>
+          <DarkModeSwitch
+            size="medium"
+            icon={<LightMode />}
+            checkedIcon={<DarkMode />}
+            checked={themeMode === 'dark'}
+            onChange={(e) => setThemeMode(e.target.checked ? 'dark' : 'light')}
+          />
+        </Box>
       </Menu>
     </AppBar>
   );
