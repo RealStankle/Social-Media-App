@@ -30,6 +30,7 @@ const App = () => {
           direction="row"
           justifyContent="space-between"
           spacing={{ xs: 0, md: 2 }}
+          p={{ xs: 1, md: 0 }}
         >
           <Sidebar setThemeMode={setThemeMode} />
           <Feed />
