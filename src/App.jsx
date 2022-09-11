@@ -26,7 +26,11 @@ const App = () => {
       <CssBaseline />
       <Box>
         <Navbar />
-        <Stack direction="row" justifyContent="space-between" spacing={2}>
+        <Stack
+          direction="row"
+          justifyContent="space-between"
+          spacing={{ xs: 0, md: 2 }}
+        >
           <Sidebar setThemeMode={setThemeMode} />
           <Feed />
           <Rightbar />
