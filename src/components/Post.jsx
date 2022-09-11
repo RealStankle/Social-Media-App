@@ -18,7 +18,7 @@ const Post = ({ photo }) => {
   return (
     <Card
       sx={{
-        mb: 2,
+        mb: 4,
       }}
     >
       <CardHeader
