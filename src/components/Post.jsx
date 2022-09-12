@@ -38,6 +38,7 @@ const Post = ({ photo }) => {
         image={photo.urls.regular}
         alt={photo.alt_description}
         height="500"
+        loading="lazy"
       />
       {photo.description && (
         <CardContent>
