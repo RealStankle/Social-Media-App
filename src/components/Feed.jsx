@@ -1,26 +1,9 @@
-import { useEffect, useState, useCallback } from 'react';
 import { Box } from '@mui/material';
 import Post from './Post';
-import { fetchPhotos, options } from '../utils/fetchPhotos';
+import { usePhotos } from '../context/PhotosContext';
 
 const Feed = () => {
-  const [photos, setPhotos] = useState([]);
-
-  const fetchData = useCallback(async () => {
-    const photosData = await fetchPhotos(
-      'https://api.unsplash.com/photos/random',
-      {
-        ...options,
-        params: { ...options.params, query: 'nature' },
-      }
-    );
-
-    setPhotos(photosData);
-  });
-
-  useEffect(() => {
-    fetchData();
-  }, []);
+  const { photos } = usePhotos();
 
   return (
     <Box sx={{ flex: 4, p: { xs: 0, md: 2 } }}>

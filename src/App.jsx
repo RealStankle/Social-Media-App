@@ -11,6 +11,7 @@ import Sidebar from './components/Sidebar';
 import Feed from './components/Feed';
 import Rightbar from './components/Rightbar';
 import Navbar from './components/Navbar';
+import { PhotosProvider } from './context/PhotosContext';
 
 const App = () => {
   const [themeMode, setThemeMode] = useState('light');
@@ -33,8 +34,10 @@ const App = () => {
           p={{ xs: 1, md: 0 }}
         >
           <Sidebar />
-          <Feed />
-          <Rightbar />
+          <PhotosProvider>
+            <Feed />
+            <Rightbar />
+          </PhotosProvider>
         </Stack>
       </Box>
     </ThemeProvider>
