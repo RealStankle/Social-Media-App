@@ -23,11 +23,15 @@ const Sidebar = () => {
         flex: 1,
         p: 2,
         display: { xs: 'none', sm: 'block' },
+        transform: 'translateZ(0)',
       }}
     >
       <Box
         sx={{
           position: 'fixed',
+          left: 0,
+          right: 0,
+          p: 2,
         }}
       >
         <List>
