@@ -22,7 +22,7 @@ import {
   VideoCameraFront,
 } from '@mui/icons-material';
 
-const AddPost = () => {
+const CreatePost = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -114,4 +114,4 @@ const AddPost = () => {
   );
 };
 
-export default AddPost;
+export default CreatePost;
