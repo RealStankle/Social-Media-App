@@ -18,7 +18,9 @@ const Post = ({ photo }) => {
   return (
     <Card
       sx={{
-        mb: 4,
+        '&:not(&:last-of-type)': {
+          mb: 4,
+        },
       }}
     >
       <CardHeader
