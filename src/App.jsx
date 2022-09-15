@@ -11,7 +11,7 @@ import Sidebar from './components/Sidebar';
 import Feed from './components/Feed';
 import Rightbar from './components/Rightbar';
 import Navbar from './components/Navbar';
-import AddPost from './components/AddPost';
+import CreatePost from './components/CreatePost';
 import { PhotosProvider } from './context/PhotosContext';
 
 const App = () => {
@@ -40,7 +40,7 @@ const App = () => {
             <Rightbar />
           </PhotosProvider>
         </Stack>
-        <AddPost />
+        <CreatePost />
       </Box>
     </ThemeProvider>
   );
