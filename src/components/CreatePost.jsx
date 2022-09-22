@@ -42,11 +42,7 @@ const CreatePost = () => {
           <Add />
         </Fab>
       </Tooltip>
-      <Modal
-        open={isOpen}
-        onClose={() => setIsOpen(false)}
-        // sx={{ backdropFilter: 'blur(4px)' }}
-      >
+      <Modal open={isOpen} onClose={() => setIsOpen(false)}>
         <Box
           sx={{
             position: 'absolute',
