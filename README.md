@@ -4,6 +4,8 @@
 
 Simple social media app ui created with React and Material UI.
 
+![Application Screenshot](https://user-images.githubusercontent.com/78358128/192162176-53e7caae-5f07-4d35-a273-eb29f8b4efcd.png)
+
 ## Table of Contents
 
 - [General Info](#general-info)
