@@ -36,7 +36,7 @@ To clone and run this application, you'll need Git and Node.js (which comes with
 
 ```bash
 # Clone this repository
-git clone https://github.com/realstankle/social-app.git
+git clone https://github.com/femincan/social-app.git
 
 # Go into the repository
 cd social-app
